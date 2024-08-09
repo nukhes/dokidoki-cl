@@ -1,7 +1,11 @@
 # Doki Doki - Chemistry Lab
 Jogo para a Feira de Cursos ETEC 2024, se passa em universo alternativo em que você será imerso em uma experiência envolvendo encontros e Estudos de Química, conquiste sua garota balanceando moléculas C6H12O6.
 
-# Instrução de Desenvolvimento (apenas para devs, caso queira baixar o jogo vá em "releases")
+# Instrução de Desenvolvimento
+
+[!NOTE]
+apenas para devs, caso queira baixar o jogo vá em "releases"
+
 O jogo está sendo desenvolvido com o [Ren'py](https://www.renpy.org/), com o [DDLCModTemplate](https://github.com/Monika-After-Story/DDLCModTemplate), adotamos alguns padrões internos de construção para o código e organização do projeto.
 
 ## Caminhos
