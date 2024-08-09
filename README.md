@@ -1,7 +1,11 @@
 # Doki Doki - Chemistry Lab
 Jogo para a Feira de Cursos ETEC 2024, se passa em universo alternativo em que você será imerso em uma experiência envolvendo encontros e Estudos de Química, conquiste sua garota balanceando moléculas C6H12O6.
 
-# Instrução de Desenvolvimento (apenas para devs, caso queira baixar o jogo vá em "releases")
+# Instrução de Desenvolvimento
+
+> [!NOTE]
+> Apenas para devs, caso queira baixar o jogo vá em "releases"
+
 O jogo está sendo desenvolvido com o [Ren'py](https://www.renpy.org/), com o [DDLCModTemplate](https://github.com/Monika-After-Story/DDLCModTemplate), adotamos alguns padrões internos de construção para o código e organização do projeto.
 
 ## Caminhos
@@ -24,4 +28,4 @@ Devemos seguir as regras de sintaxe do Ren'py, quando indentar certifique-se de 
 Exemplo: `monika_festival_day`, `sayori_birthday`, `natsuki_teaching_chemistry`.
 
 ## Observação
-Os Assets originais (audio.rpa, images.rpa, fonts.rpa) devem ser copiados para o diretório `./game`, pois os mesmos são pré-compilados e inserir-los neste repositório é ilegal, [Clique Aqui](https://ddlc.moe/) para ser redirecionado ao site oficial do DDLC e instalar uma cópia completa que contém os assets.
+Os assets originais `audio.rpa, images.rpa, fonts.rpa` devem ser copiados para o diretório `./game`, pois os mesmos são pré-compilados pelo Team Salvato e inserir-los neste repositório é ilegal, [Clique Aqui](https://ddlc.moe/) para ser redirecionado ao site oficial do DDLC e instalar uma cópia completa que contém os assets.
