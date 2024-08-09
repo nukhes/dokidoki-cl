@@ -1,2 +1,4 @@
 *.rpa
 errors.txt
+*.rpyc
+*.txt

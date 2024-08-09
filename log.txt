@@ -1,37 +1,31 @@
-Fri Aug  9 17:39:52 2024
+Fri Aug  9 18:49:25 2024
 Linux-6.6.44-1-MANJARO-x86_64-with-glibc2.2.5
 Ren'Py 6.99.12.4.2187
  
 
 Bootstrap to the start of init.init took 0.07s
 Early init took 0.01s
-Loader init took 0.02s
+Loader init took 0.01s
 Loading error handling took 0.02s
-Loading script took 0.22s
+Loading script took 0.17s
 Loading persistent took 0.00s
 Importing _renpysteam: ImportError('No module named _renpysteam',)
-Running init code took 0.11s
-Loading analysis data took 0.02s
-Analyze and compile ATL took 0.04s
-Index archives took 0.00s
-Backing up script files to '/root/.renpy/backups/ddcl':
-Dump and make backups. took 0.07s
-Cleaning cache took 0.00s
-Making clean stores took 0.00s
+Traceback (most recent call last):
+  File "/opt/renpy/renpy/execution.py", line 438, in run
+    node.execute()
+  File "/opt/renpy/renpy/ast.py", line 814, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/opt/renpy/renpy/python.py", line 1719, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/splash.rpy", line 7, in <module>
+    renpy.error("InstalaÃ§Ã£o defeituosa")
+  File "/opt/renpy/renpy/exports.py", line 2113, in error
+    _error_handlers[-1](msg)
+  File "/opt/renpy/renpy/exports.py", line 2099, in _error
+    raise Exception(msg)
+Exception: InstalaÃ§Ã£o defeituosa
 DPI scale factor: 1.000000
-Creating interface object took 0.05s
-Cleaning stores took 0.00s
-Init translation took 0.09s
-Build styles took 0.01s
-Load screen analysis took 0.00s
-Analyze screens took 0.01s
-Save screen analysis took 0.04s
-Prepare screens took 0.04s
-Save pyanalysis. took 0.00s
-Save bytecode. took 0.00s
-Running _start took 0.00s
-Performance test:
-Interface start took 0.01s
+Interface start took 0.18s
 
 primary display bounds: (0, 0, 1920, 1080)
 Windowed mode.
@@ -366,11 +360,69 @@ Texture testing:
 - 512px textures work.
 - 1024px textures work.
 - 2048px textures work.
-Total time until interface ready: 0.999511957169s
-- Target is 5 frames in 0.333333333333 seconds.
-- Frame drawn at 0.000000 seconds.
-- Frame drawn at 0.013252 seconds.
-- Frame drawn at 0.015027 seconds.
-- Frame drawn at 0.025997 seconds.
-- Frame drawn at 0.039153 seconds.
-- 0.039153 seconds to render 5 frames.
+Total time until interface ready: 0.620105028152s
+While handling exception:
+Traceback (most recent call last):
+  File "/opt/renpy/renpy/display/error.py", line 135, in report_exception
+    traceback_fn=traceback_fn,
+  File "/opt/renpy/renpy/game.py", line 280, in invoke_in_new_context
+    return callable(*args, **kwargs)
+  File "/opt/renpy/renpy/display/error.py", line 43, in call_exception_screen
+    return renpy.ui.interact(mouse="screen", type="screen", suppress_overlay=True, suppress_underlay=True)
+  File "/opt/renpy/renpy/ui.py", line 285, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "/opt/renpy/renpy/display/core.py", line 2538, in interact
+    scene_lists.replace_transient()
+  File "/opt/renpy/renpy/display/core.py", line 822, in replace_transient
+    self.remove(layer, tag)
+  File "/opt/renpy/renpy/display/core.py", line 1107, in remove
+    self.hide_or_replace(layer, remove_index, "hide")
+  File "/opt/renpy/renpy/display/core.py", line 1031, in hide_or_replace
+    d = oldsle.displayable._hide(now - st, now - at, prefix)
+  File "/opt/renpy/renpy/display/screen.py", line 443, in _hide
+    self.update()
+  File "/opt/renpy/renpy/display/screen.py", line 578, in update
+    self.screen.function(**self.scope)
+  File "/opt/renpy/renpy/sl2/slast.py", line 1966, in __call__
+    self.prepare_screen()
+  File "/opt/renpy/renpy/sl2/slast.py", line 1918, in prepare_screen
+    self.const_ast.prepare(self.const_ast.analysis)
+  File "/opt/renpy/renpy/sl2/slast.py", line 325, in prepare
+    i.prepare(analysis)
+  File "/opt/renpy/renpy/sl2/slast.py", line 589, in prepare
+    SLBlock.prepare(self, analysis)
+  File "/opt/renpy/renpy/sl2/slast.py", line 325, in prepare
+    i.prepare(analysis)
+  File "/opt/renpy/renpy/sl2/slast.py", line 589, in prepare
+    SLBlock.prepare(self, analysis)
+  File "/opt/renpy/renpy/sl2/slast.py", line 325, in prepare
+    i.prepare(analysis)
+  File "/opt/renpy/renpy/sl2/slast.py", line 589, in prepare
+    SLBlock.prepare(self, analysis)
+  File "/opt/renpy/renpy/sl2/slast.py", line 325, in prepare
+    i.prepare(analysis)
+  File "/opt/renpy/renpy/sl2/slast.py", line 589, in prepare
+    SLBlock.prepare(self, analysis)
+  File "/opt/renpy/renpy/sl2/slast.py", line 325, in prepare
+    i.prepare(analysis)
+  File "/opt/renpy/renpy/sl2/slast.py", line 1589, in prepare
+    self.constant = min(self.constant, self.ast.constant)
+AttributeError: 'NoneType' object has no attribute 'constant'
+Traceback (most recent call last):
+  File "/opt/renpy/renpy/bootstrap.py", line 295, in bootstrap
+    renpy.main.main()
+  File "/opt/renpy/renpy/main.py", line 419, in main
+    game.context().run(node)
+  File "/opt/renpy/renpy/execution.py", line 438, in run
+    node.execute()
+  File "/opt/renpy/renpy/ast.py", line 814, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/opt/renpy/renpy/python.py", line 1719, in py_exec_bytecode
+    exec bytecode in globals, locals
+  File "game/splash.rpy", line 7, in <module>
+    renpy.error("InstalaÃ§Ã£o defeituosa")
+  File "/opt/renpy/renpy/exports.py", line 2113, in error
+    _error_handlers[-1](msg)
+  File "/opt/renpy/renpy/exports.py", line 2099, in _error
+    raise Exception(msg)
+Exception: InstalaÃ§Ã£o defeituosa
