@@ -18,6 +18,3 @@ label introduction:
     "Em minha cabeça penso no que eu deveria falar, enquanto isso percebo mais alguém chegand..."
     
     hide monika
-
-    show sayori 1a at t11
-    s "Oiiiiiiii [player]"

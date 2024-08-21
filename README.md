@@ -27,5 +27,3 @@ Devemos seguir as regras de sintaxe do Ren'py, quando indentar certifique-se de 
 - labels: devem ter um nome que descreva bem o que ela faz e todo em `lower_case`, palavras separadas por `_`.
 Exemplo: `monika_festival_day`, `sayori_birthday`, `natsuki_teaching_chemistry`.
 
-## Observação
-Os assets originais `audio.rpa, images.rpa, fonts.rpa` devem ser copiados para o diretório `./game`, pois os mesmos são pré-compilados pelo Team Salvato e inserir-los neste repositório é ilegal, [Clique Aqui](https://ddlc.moe/) para ser redirecionado ao site oficial do DDLC e instalar uma cópia completa que contém os assets.

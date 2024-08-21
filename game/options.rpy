@@ -20,7 +20,7 @@ define build.name = "DDCL"
 # Controls which sound / music mixers are available
 define config.has_sound = True
 define config.has_music = True
-define config.has_voice = False
+define config.has_voice = True
 
 # main menu music
 define config.main_menu_music = audio.t1
