@@ -43,22 +43,6 @@ image menu_fade:
     "white"
     menu_fadeout
 
-image menu_art_y:
-    subpixel True
-    "gui/menu_art_y.png"
-    xcenter 600
-    ycenter 335
-    zoom 0.60
-    menu_art_move(0.54, 600, 0.60)
-
-image menu_art_n:
-    subpixel True
-    "gui/menu_art_n.png"
-    xcenter 750
-    ycenter 385
-    zoom 0.58
-    menu_art_move(0.58, 750, 0.58)
-
 image menu_art_s:
     subpixel True
     "gui/menu_art_s.png"
@@ -67,6 +51,10 @@ image menu_art_s:
     zoom 0.68
     menu_art_move(0.68, 510, 0.68)
 
+# Dummy
+image menu_art_n:
+    pass
+
 image menu_art_m:
     subpixel True
     "gui/menu_art_m.png"
@@ -74,46 +62,6 @@ image menu_art_m:
     ycenter 640
     zoom 1.00
     menu_art_move(1.00, 1000, 1.00)
-
-image menu_art_y_ghost:
-    subpixel True
-    "gui/menu_art_y_ghost.png"
-    xcenter 600
-    ycenter 335
-    zoom 0.60
-    menu_art_move(0.54, 600, 0.60)
-
-image menu_art_n_ghost:
-    subpixel True
-    "gui/menu_art_n_ghost.png"
-    xcenter 750
-    ycenter 385
-    zoom 0.58
-    menu_art_move(0.58, 750, 0.58)
-
-image menu_art_s_ghost:
-    subpixel True
-    "gui/menu_art_s_ghost.png"
-    xcenter 510
-    ycenter 500
-    zoom 0.68
-    menu_art_move(0.68, 510, 0.68)
-
-image menu_art_m_ghost:
-    subpixel True
-    "gui/menu_art_m_ghost.png"
-    xcenter 1000
-    ycenter 640
-    zoom 1.00
-    menu_art_move(1.00, 1000, 1.00)
-
-image menu_art_s_glitch:
-    subpixel True
-    "gui/menu_art_s_break.png"
-    xcenter 470
-    ycenter 600
-    zoom 0.68
-    menu_art_move(.8, 470, .8)
 
 image menu_nav:
     "gui/overlay/main_menu.png"

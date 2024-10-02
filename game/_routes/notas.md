@@ -1,5 +1,6 @@
-## monika
+# TODO
 
-1a: normal
-1b: falando
-1c: triste
+## Configurar Poses
+## Configurar Música
+## Extender encontros
+## Minigame de química

@@ -1,12 +1,10 @@
 label mikael_choice:
     scene bg club_day with fade
-    show monika 1c at right
+    show monika 5b at hf11
     m "Que bom que você escolheu passar mais tempo comigo! Vamos ver o que podemos aprender hoje."
-
+    show monika 1b at hf11
     mc "Com certeza, espero que seja algo interessante."
 
-    s "Não se esqueçam de se divertir enquanto aprendem! A química é sobre fazer descobertas juntos!"
+    # Minigame
 
     "A interação com Mikael está se tornando cada vez mais interessante..."
-
-    jump encontro_mikael

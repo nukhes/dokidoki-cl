@@ -20,7 +20,7 @@ label start:
     $ allow_skipping = True
     $ config.allow_skipping = True
 
-    call introduction
+    call game
 
     # if persistent.example_seen:
     #     call tutorial_selection

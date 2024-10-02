@@ -11,4 +11,4 @@ label encontro_indiano:
     "O que sinto por Indiano..."
     "é algo intenso como a fissão nuclear..."
 
-    return
+    call endgame

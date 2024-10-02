@@ -10,4 +10,4 @@ label encontro_mikael:
 
     "O que sinto por Mikael é algo intenso como a fissão nuclear..."
 
-    return
+    call endgame
