@@ -2,3 +2,4 @@
 errors.txt
 *.rpyc
 *.txt
+/game/cache
