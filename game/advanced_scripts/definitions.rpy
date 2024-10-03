@@ -103,6 +103,18 @@ define audio.closet_close = "sfx/closet-close.ogg"
 define audio.page_turn = "sfx/pageflip.ogg"
 define audio.fall = "sfx/fall.ogg"
 
+
+# Custom Backgrounds
+image bg building = "mod_assets/bg/building.jpg"
+image bg garden = "mod_assets/bg/garden.jpg"
+image bg gate = "mod_assets/bg/gate_s.jpg"
+image bg intersection = "mod_assets/bg/intersection_s.jpg"
+
+image bg park_entrance = "mod_assets/bg/park_entrance.jpg"
+image bg restaurant = "mod_assets/bg/restaurant.jpg"
+image bg sidewalk = "mod_assets/bg/sidewalk.jpg"
+image bg yard = "mod_assets/bg/yard.jpg"
+
 # Backgrounds
 image black = "#000000"
 image dark = "#000000e4"
