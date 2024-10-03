@@ -9,5 +9,6 @@ label badendgame(pause_length=4.0):
     show end
     with dissolve_scene_full
     pause pause_length
+    call credits_custom
     $ quick_menu = True
     $ renpy.full_restart()

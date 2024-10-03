@@ -20,7 +20,7 @@ label start:
     $ allow_skipping = True
     $ config.allow_skipping = True
 
-    call game
+    call encontro_mikael
 
     # if persistent.example_seen:
     #     call tutorial_selection
@@ -36,5 +36,17 @@ label endgame(pause_length=4.0):
     show end
     with dissolve_scene_full
     pause pause_length
+
+    call credits_custom
+
     $ quick_menu = True
     $ renpy.full_restart()
+
+label credits_custom:
+    "Obrigado por jogar Doki Doki Chemistry Lab! Este mod de DDLC não seria possível sem a Team Salvato e a nossa equipe."
+    "Pedro H. (Desenvolvimento, Programação e Roteiro)"
+    "Matheus M. (Roteiro)"
+    "Rafael Tavares (Design de personagem)"
+    "Rafael Garcia (Design de personagem e desenho digital)"
+    "Feira de Cursos 2024 - ETEC 2DS"
+    return

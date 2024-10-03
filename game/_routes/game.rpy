@@ -26,10 +26,15 @@ label game:
 
     # Transição para a escola
     scene bg class_day with dissolve
-    "Vocês chegam à escola e se reúnem na sala de aula."
+    "*Vocês chegam à escola e se reúnem na sala de aula.*"
+    "Mais um dia de aula..."
+    "COM UMA PROVA NA PRIMEIRA AULA!!!"
+    "A temida prova de química."
+    "Pelo menos antes tem uma atividade prática em dupla, isso pode ser minha chance de..."
+    "Esquece... ideia idiota
 
     show sayori 1r at f11
-    s "Perfeito! Mal posso esperar para ver as cores mudarem. [player], quer ser meu parceiro nesse experimento?"
+    s "[player], quer ser minha dupla na prova?"
 
     show sayori 1b at t21
     show monika 3b at f22
