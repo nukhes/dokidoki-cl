@@ -13,5 +13,5 @@ label indiano_lab:
 
     "Acho que Indiano está me dando atenção... Talvez tenha algo mais aqui."
 
-    # Transição para o dia 2
-    jump dia_2
+    call minigame
+    call dia_2

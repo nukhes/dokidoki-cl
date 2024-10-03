@@ -63,7 +63,7 @@ style poemgame_text:
     outlines []
 
     hover_xoffset -3
-    hover_outlines [(3, "#fef", 0, 0), (2, "#fcf", 0, 0), (1, "#faf", 0, 0)]
+    hover_outlines [(3, "#eeffef", 0, 0), (2, "#ccffcc", 0, 0), (1, "#aaffb1", 0, 0)]
 
 style gui_text:
     font gui.interface_font
@@ -216,7 +216,7 @@ style say_label:
     size gui.name_text_size
     xalign gui.name_xalign
     yalign 0.5
-    outlines [(3, "#b59", 0, 0), (1, "#b59", 1, 1)]
+    outlines [(3, "#55bb5e", 0, 0), (1, "#55bb5e", 1, 1)]
 
 style say_dialogue:
     xpos gui.text_xpos
@@ -246,7 +246,7 @@ image ctc:
 ## http://www.renpy.org/doc/html/screen_special.html#input
 
 image input_caret:
-    Solid("#b59")
+    Solid("#5ebb55")
     size (2,25) subpixel True
     block:
         linear 0.35 alpha 0
@@ -499,9 +499,9 @@ style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
     font "gui/font/RifficFree-Bold.ttf"
     color "#fff"
-    outlines [(4, "#b59", 0, 0), (2, "#b59", 2, 2)]
-    hover_outlines [(4, "#fac", 0, 0), (2, "#fac", 2, 2)]
-    insensitive_outlines [(4, "#fce", 0, 0), (2, "#fce", 2, 2)]
+    outlines [(4, "#55bb5e", 0, 0), (2, "#55bb55", 2, 2)]
+    hover_outlines [(4, "#aaffb1", 0, 0), (2, "#aaffb5", 2, 2)]
+    insensitive_outlines [(4, "#ccffd3", 0, 0), (2, "#d0ffcc", 2, 2)]
 
 
 ## Main Menu screen ############################################################
@@ -723,7 +723,7 @@ style game_menu_label_text:
     font "gui/font/RifficFree-Bold.ttf"
     size gui.title_text_size
     color "#fff"
-    outlines [(6, "#b59", 0, 0), (3, "#b59", 2, 2)]
+    outlines [(6, "#55bb5e", 0, 0), (3, "#55bb5e", 2, 2)]
     yalign 0.5
 
 style return_button:
@@ -1058,7 +1058,7 @@ style pref_label_text:
     font "gui/font/RifficFree-Bold.ttf"
     size 24
     color "#fff"
-    outlines [(3, "#b59", 0, 0), (1, "#b59", 1, 1)]
+    outlines [(3, "#55bb5e", 0, 0), (1, "#55bb5e", 1, 1)]
     yalign 1.0
 
 style pref_vbox:

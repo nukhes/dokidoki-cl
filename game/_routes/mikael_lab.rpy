@@ -18,6 +18,6 @@ label mikael_lab:
     show monika 1j at f11
 
     "Mikael parece ver as coisas de um jeito mais profundo. Isso é interessante..."
-
-    # Transição para o dia 2
-    jump dia_2
+    
+    call minigame
+    call dia_2

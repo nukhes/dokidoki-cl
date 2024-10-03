@@ -1,10 +1,9 @@
 ## splash screen is first thing that gets shown to player
 init -100 python:
-
     # archive check for mods
     for archive in ['audio','images','fonts']:
         if archive not in config.archives:
-            renpy.error("Instalação defeituosa")
+            renpy.error("Instalação defeituosa, contate o desenvolvedor para mais informações")
 
 # disclaimers
 init python:
@@ -48,11 +47,14 @@ image menu_art_s:
     "gui/menu_art_s.png"
     xcenter 510
     ycenter 500
-    zoom 0.68
+    zoom 0.9
     menu_art_move(0.68, 510, 0.68)
 
 # Dummy
 image menu_art_n:
+    pass
+
+image menu_art_y:
     pass
 
 image menu_art_m:
@@ -60,7 +62,7 @@ image menu_art_m:
     "gui/menu_art_m.png"
     xcenter 1000
     ycenter 640
-    zoom 1.00
+    zoom 1.8
     menu_art_move(1.00, 1000, 1.00)
 
 image menu_nav:
@@ -71,7 +73,7 @@ image menu_particles:
     2.481
     xpos 224
     ypos 104
-    ParticleBurst("gui/menu_particle.png", explodeTime=0, numParticles=20, particleTime=2.0, particleXSpeed=6, particleYSpeed=4).sm
+    ParticleBurst("gui/menu_particle.png", explodeTime=0.2, numParticles=60, particleTime=2.0, particleXSpeed=6, particleYSpeed=4).sm
     particle_fadeout
 
 transform particle_fadeout:

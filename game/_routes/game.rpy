@@ -1,4 +1,5 @@
 label game:
+    play music t2
     scene bg residential_day with fade
 
     "É um dia calmo como qualquer outro no qual eu estou indo para a escola. Bem, seria se não fossem meus dois amigos que vêm todos os dias comigo. Espero que seja um dia divertido como todos os outros."
@@ -34,14 +35,15 @@ label game:
     show monika 3b at f22
     m "Ou pode vir comigo, acho que podemos aprender muito juntos. O que acha?"
     show monika 3m at t22
-    "Quem eu escolho para trabalhar hoje? Indiano é bem animada, mas Mikael parece bem focado."
-    
+    "Quem eu escolho hoje? Indiano é bem animado, mas Mikael parece mais focado."
 
     menu:
         "Escolher Indiano":
+            $ chosen = "s"
             call indiano_lab
 
         "Escolher Mikael":
+            $ chosen = "m"
             call mikael_lab
 
 
@@ -73,9 +75,15 @@ label dia_2:
 
     menu:
         "Escolher Mikael":
-            call mikael_choice
+            if chosen != "m":
+                call marquinhosbadendgame_indiano
+            else:
+                call mikael_choice
 
         "Escolher Indiano":
-            call indiano_choice
+            if chosen != "s":
+                call marquinhosbadendgame_mikael
+            else:
+                call indiano_choice
 
 # A Partir daqui a histório termina em alguns dos encontros

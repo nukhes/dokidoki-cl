@@ -29,18 +29,18 @@ define gui.activate_sound_glitch = "gui/sfx/select_glitch.ogg"
 define gui.accent_color = '#ffffff'
 
 ## The color used for a text button when it is neither selected nor hovered.
-define gui.idle_color = '#aaaaaa'
+define gui.idle_color = '#a4c796'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
 define gui.idle_small_color = '#333'
 
 ## The color that is used for buttons and bars that are hovered.
-define gui.hover_color = '#cc6699'
+define gui.hover_color = '#69cc66'
 
 ## The color used for a text button when it is selected but not focused. A
 ## button is selected if it is the current screen or preference value.
-define gui.selected_color = '#bb5588'
+define gui.selected_color = '#55bb55'
 
 ## The color used for a text button when it cannot be selected.
 define gui.insensitive_color = '#aaaaaa7f'
@@ -218,7 +218,7 @@ define gui.choice_button_text_font = gui.default_font
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
 define gui.choice_button_text_idle_color = "#000"
-define gui.choice_button_text_hover_color = "#fa9"
+define gui.choice_button_text_hover_color = "#e0ff99"
 
 
 ## File Slot Buttons ###########################################################

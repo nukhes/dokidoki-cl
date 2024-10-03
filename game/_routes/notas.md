@@ -1,6 +1,6 @@
 # TODO
 
-## Configurar Poses
-## Configurar Música
+## Configurar Poses OK
+## Configurar Música OK
 ## Extender encontros
-## Minigame de química
+## Minigame de química OK

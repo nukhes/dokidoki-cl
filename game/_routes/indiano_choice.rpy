@@ -13,6 +13,4 @@ label indiano_choice:
 
     "Ela está flertando de novo? Isso está ficando interessante."
 
-    # Minigame
-
-    jump encontro_indiano
+    call encontro_indiano

@@ -5,6 +5,6 @@ label mikael_choice:
     show monika 1b at hf11
     mc "Com certeza, espero que seja algo interessante."
 
-    # Minigame
-
     "A interação com Mikael está se tornando cada vez mais interessante..."
+
+    call encontro_mikael
