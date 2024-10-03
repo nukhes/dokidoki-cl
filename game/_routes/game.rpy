@@ -31,7 +31,7 @@ label game:
     "COM UMA PROVA NA PRIMEIRA AULA!!!"
     "A temida prova de química."
     "Pelo menos antes tem uma atividade prática em dupla, isso pode ser minha chance de..."
-    "Esquece... ideia idiota
+    "Esquece... ideia idiota"
 
     show sayori 1r at f11
     s "[player], quer ser minha dupla na prova?"
@@ -75,6 +75,8 @@ label dia_2:
 
     show monika 4b at t21
     m "Oi! Acho que vamos continuar com mais experimentos práticos hoje... Se quiser, podemos fazer algo."
+
+    show monika 4a at t21
 
     "Quem será que me ajudará melhor hoje? Será mais divertido com caio ou mais interessante com mikael?"
 

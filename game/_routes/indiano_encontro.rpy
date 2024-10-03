@@ -1,14 +1,14 @@
 label encontro_indiano:
     play music t2
     scene bg club_day with fade
-    show sayori 4b at hf111
+    show sayori 4b at hf11
     s "Então, quem diria que nosso interesse por química nos traria até aqui... mas, sabe, acho que a verdadeira química está entre nós."
     show sayori 1a at f11
 
     mc "Você é direto... gosto disso. Talvez nossa 'química' seja mais do que apenas no laboratório."
 
     s 5a "Bem, o que você acha de testarmos essa teoria?"
-    show sayori 5d at fh11
+    show sayori 5d at hf11
 
     "Parece que as coisas estão ficando melhores a cada dia..."
 

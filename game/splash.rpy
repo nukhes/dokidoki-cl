@@ -9,7 +9,7 @@ init -100 python:
 init python:
     menu_trans_time = 1
 
-    splash_message_default = "Este é um mod de Doki Doki Literature Club, sem filiação com a equipe do Team Salvato."
+    splash_message_default = "Este é um mod de Doki Doki Literature Club, sem filiação com a equipe do Team Salvato. Feira de Cursos ETEC 2024."
 
     splash_messages = [
         "Feira de Cursos ETEC 2024.",
@@ -23,8 +23,8 @@ image splash_warning = ParameterizedText(style="splash_text", xalign=0.5, yalign
 image menu_logo:
     "/mod_assets/DDLCModTemplateLogo.png"
     subpixel True
-    xcenter 240
-    ycenter 120
+    xcenter 210
+    ycenter 200
     zoom 0.60
     menu_logo_move
 
