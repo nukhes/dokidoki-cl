@@ -4,3 +4,5 @@ errors.txt
 *.txt
 /game/cache
 *.txt
+game/cache/bytecode.rpyb
+log.txt
