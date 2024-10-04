@@ -12,5 +12,18 @@ label indiano_choice:
     show sayori 5c at f11
 
     "Ela está flertando de novo? Isso está ficando interessante."
+    hide sayori
+
+    "Indiano retira da bolsa um livro..."
+    "Fico admirando sua beleza e concentração na leitura."
+
+    show sayori 5d
+    s "[player], gostaria de se juntar a mim nessa leitura?"
+    mc "C-claro!"
+    
+    "Estou começando a ficar com vergonha..."
+    "A presença de Indiano é doce."
+    "Começo a mergulhar na leitura procurando palavras-chave para puxar assunto..."
+    call poem
 
     call encontro_indiano
