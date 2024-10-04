@@ -1,7 +1,8 @@
 label encontro_indiano:
+    $ renpy.call_screen("dialog", "Dia 3", ok_action=return()) 
     play music t2
     scene black with fade
-    "Após a leitura e conversa vocês decidem dar uma volta..."
+    "Após a leitura e conversa vocês decidem dar uma volta no dia seguinte, você a princípio fica ansiono mas consegue se acalmar..."
     scene bg club_day with fade
     show sayori 4b at hf11
     s "Então, quem diria que nosso interesse por química nos traria até aqui... mas, sabe, acho que a verdadeira química está entre nós."

@@ -24,8 +24,10 @@ label mikael_lab:
 
     mc "Valeu mikael, fica de boa o pai mata no peito."
 
-    "Espero não reprovar por causa dessa prova..."
-
+    show monika 2l at hf11
+    "Mikael deve estar rindo de mim."
+    "A minha suposta confiança caiu por terra."
+    "Bem, vamos nessa"
     
     call minigame
     call dia_2

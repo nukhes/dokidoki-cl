@@ -19,6 +19,7 @@ label indiano_lab:
     mc "Valeu indiano, fica de boa o pai mata no peito."
 
     "Espero não reprovar por causa dessa prova..."
+    "Honestamente após aspirar tamanha confiança creio que irei bem!"
 
     call minigame
     call dia_2

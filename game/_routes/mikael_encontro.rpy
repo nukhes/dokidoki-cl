@@ -1,6 +1,8 @@
 label encontro_mikael:
+    $ renpy.call_screen("dialog", "Dia 3", ok_action=return()) 
+    play music t2
     scene black with fade
-    "Após a leitura e conversa vocês decidem dar uma volta..."
+    "Após a leitura e conversa vocês decidem dar uma volta no dia seguinte, você a princípio fica ansiono mas consegue se acalmar..."
     "Vocês estão caminhando ao parque para tomar um pouco de ar fresco."
 
     scene bg residential_day with dissolve
