@@ -1,9 +1,8 @@
-﻿
-## Initialization
+﻿## Initialization
 ################################################################################
 
 init offset = -1
-
+$ _skipping = False
 
 ################################################################################
 ## Styles
@@ -389,14 +388,10 @@ screen quick_menu():
             yalign 0.995
 
             #textbutton _("Back") action Rollback()
-            textbutton _("History") action ShowMenu('history')
-            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
-            textbutton _("Save") action ShowMenu('save')
-            textbutton _("Load") action ShowMenu('load')
-            #textbutton _("Q.Save") action QuickSave()
-            #textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Settings") action ShowMenu('preferences')
+            textbutton _("Histórico dos diálogos") action ShowMenu('history')
+            # textbutton _("Q.Save") action QuickSave()
+            # textbutton _("Q.Load") action QuickLoad()
+            # textbutton _("Settings") action ShowMenu('preferences')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -447,19 +442,15 @@ screen navigation():
         if not persistent.autoload or not main_menu:
 
             if main_menu:
-
-                if persistent.playthrough == 1:
-                    textbutton _("ŔŗñĮ¼»ŧþŀÂŻŕěōì«") action If(persistent.playername, true=Start(), false=Show(screen="name_input", message="Please enter your name", ok_action=Function(FinishEnterName)))
-                else:
-                    textbutton _("New Game") action If(persistent.playername, true=Start(), false=Show(screen="name_input", message="Please enter your name", ok_action=Function(FinishEnterName)))
+                textbutton _("Jogar") action If(persistent.playername, true=Start(), false=Show(screen="name_input", message="Qual seu nome?", ok_action=Function(FinishEnterName)))
 
             else:
 
-                textbutton _("History") action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
+                textbutton _("Histórico de diálogos") action [ShowMenu("history"), SensitiveIf(renpy.get_screen("history") == None)]
 
-                textbutton _("Save Game") action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)]
+                # textbutton _("Save Game") action [ShowMenu("save"), SensitiveIf(renpy.get_screen("save") == None)]
 
-            textbutton _("Load Game") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
+            # textbutton _("Load Game") action [ShowMenu("load"), SensitiveIf(renpy.get_screen("load") == None)]
 
             if _in_replay:
 
@@ -467,21 +458,17 @@ screen navigation():
 
             elif not main_menu:
                 if persistent.playthrough != 3:
-                    textbutton _("Main Menu") action MainMenu()
+                    textbutton _("Menu") action MainMenu()
                 else:
-                    textbutton _("Main Menu") action NullAction()
+                    textbutton _("Menu") action NullAction()
 
-            textbutton _("Settings") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
+            # textbutton _("Configurações") action [ShowMenu("preferences"), SensitiveIf(renpy.get_screen("preferences") == None)]
 
             #textbutton _("About") action ShowMenu("about")
 
             if renpy.variant("pc"):
-
-                ## Help isn't necessary or relevant to mobile devices.
-                textbutton _("Help") action Help("README.html")
-
                 ## The quit button is banned on iOS and unnecessary on Android.
-                textbutton _("Quit") action Quit(confirm=not main_menu)
+                textbutton _("Sair") action Quit(confirm=not main_menu)
         else:
             timer 1.75 action Start("autoload_yurikill")
 
@@ -1118,7 +1105,7 @@ screen history():
     ## Avoid predicting this screen, as it can be very large.
     predict False
 
-    use game_menu(_("History"), scroll=("vpgrid" if gui.history_height else "viewport")):
+    use game_menu(_("Histórico"), scroll=("vpgrid" if gui.history_height else "viewport")):
 
         style_prefix "history"
 
@@ -1143,7 +1130,7 @@ screen history():
                 text h.what
 
         if not _history_list:
-            label _("The dialogue history is empty.")
+            label _("Avance na história para ver as falas passadas")
 
 
 style history_window is empty
@@ -1185,165 +1172,6 @@ style history_label:
 
 style history_label_text:
     xalign 0.5
-
-
-## Help screen #################################################################
-##
-## A screen that gives information about key and mouse bindings. It uses other
-## screens (keyboard_help, mouse_help, and gamepad_help) to display the actual
-## help.
-
-#screen help():
-#
-#    tag menu
-#
-#    default device = "keyboard"
-#
-#    use game_menu(_("Help"), scroll="viewport"):
-#
-#        style_prefix "help"
-#
-#        vbox:
-#            spacing 15
-#
-#            hbox:
-#
-#                textbutton _("Keyboard") action SetScreenVariable("device", "keyboard")
-#                textbutton _("Mouse") action SetScreenVariable("device", "mouse")
-#
-#                if GamepadExists():
-#                    textbutton _("Gamepad") action SetScreenVariable("device", "gamepad")
-#
-#            if device == "keyboard":
-#                use keyboard_help
-#            elif device == "mouse":
-#                use mouse_help
-#            elif device == "gamepad":
-#                use gamepad_help
-#
-#
-#screen keyboard_help():
-#
-#    hbox:
-#        label _("Enter")
-#        text _("Advances dialogue and activates the interface.")
-#
-#    hbox:
-#        label _("Space")
-#        text _("Advances dialogue without selecting choices.")
-#
-#    hbox:
-#        label _("Arrow Keys")
-#        text _("Navigate the interface.")
-#
-#    hbox:
-#        label _("Escape")
-#        text _("Accesses the game menu.")
-#
-#    hbox:
-#        label _("Ctrl")
-#        text _("Skips dialogue while held down.")
-#
-#    hbox:
-#        label _("Tab")
-#        text _("Toggles dialogue skipping.")
-#
-#    hbox:
-#        label _("Page Up")
-#        text _("Rolls back to earlier dialogue.")
-#
-#    hbox:
-#        label _("Page Down")
-#        text _("Rolls forward to later dialogue.")
-#
-#    hbox:
-#        label "H"
-#        text _("Hides the user interface.")
-#
-#    hbox:
-#        label "S"
-#        text _("Takes a screenshot.")
-#
-#    hbox:
-#        label "V"
-#        text _("Toggles assistive {a=https://www.renpy.org/l/voicing}self-voicing{/a}.")
-#
-#
-#screen mouse_help():
-#
-#    hbox:
-#        label _("Left Click")
-#        text _("Advances dialogue and activates the interface.")
-#
-#    hbox:
-#        label _("Middle Click")
-#        text _("Hides the user interface.")
-#
-#    hbox:
-#        label _("Right Click")
-#        text _("Accesses the game menu.")
-#
-#    hbox:
-#        label _("Mouse Wheel Up\nClick Rollback Side")
-#        text _("Rolls back to earlier dialogue.")
-#
-#    hbox:
-#        label _("Mouse Wheel Down")
-#        text _("Rolls forward to later dialogue.")
-#
-#
-#screen gamepad_help():
-#
-#    hbox:
-#        label _("Right Trigger\nA/Bottom Button")
-#        text _("Advance dialogue and activates the interface.")
-#
-#    hbox:
-#        label ("Left Trigger\nLeft Shoulder")
-#        text _("Roll back to earlier dialogue.")
-#
-#    hbox:
-#        label _("Right Shoulder")
-#        text _("Roll forward to later dialogue.")
-#
-#    hbox:
-#        label _("D-Pad, Sticks")
-#        text _("Navigate the interface.")
-#
-#    hbox:
-#        label _("Start, Guide")
-#        text _("Access the game menu.")
-#
-#    hbox:
-#        label _("Y/Top Button")
-#        text _("Hides the user interface.")
-#
-#    textbutton _("Calibrate") action GamepadCalibrate()
-#
-#
-#style help_button is gui_button
-#style help_button_text is gui_button_text
-#style help_label is gui_label
-#style help_label_text is gui_label_text
-#style help_text is gui_text
-#
-#style help_button:
-#    properties gui.button_properties("help_button")
-#    xmargin 8
-#
-#style help_button_text:
-#    properties gui.button_text_properties("help_button")
-#
-#style help_label:
-#    xsize 250
-#    right_padding 20
-#
-#style help_label_text:
-#    size gui.text_size
-#    xalign 1.0
-#    text_align 1.0
-
-
 
 ################################################################################
 ## Additional screens
@@ -1490,65 +1318,6 @@ style confirm_button:
 
 style confirm_button_text is navigation_button_text:
     properties gui.button_text_properties("confirm_button")
-
-
-## Skip indicator screen #######################################################
-##
-## The skip_indicator screen is displayed to indicate that skipping is in
-## progress.
-##
-## https://www.renpy.org/doc/html/screen_special.html#skip-indicator
-screen fake_skip_indicator():
-    use skip_indicator
-
-screen skip_indicator():
-
-    zorder 100
-    style_prefix "skip"
-
-    frame:
-
-        hbox:
-            spacing 6
-
-            text _("Skipping")
-
-            text "▸" at delayed_blink(0.0, 1.0) style "skip_triangle"
-            text "▸" at delayed_blink(0.2, 1.0) style "skip_triangle"
-            text "▸" at delayed_blink(0.4, 1.0) style "skip_triangle"
-
-
-## This transform is used to blink the arrows one after another.
-transform delayed_blink(delay, cycle):
-    alpha .5
-
-    pause delay
-
-    block:
-        linear .2 alpha 1.0
-        pause .2
-        linear .2 alpha 0.5
-        pause (cycle - .4)
-        repeat
-
-
-style skip_frame is empty
-style skip_text is gui_text
-style skip_triangle is skip_text
-
-style skip_frame:
-    ypos gui.skip_ypos
-    background Frame("gui/skip.png", gui.skip_frame_borders, tile=gui.frame_tile)
-    padding gui.skip_frame_borders.padding
-
-style skip_text:
-    size gui.notify_text_size
-
-style skip_triangle:
-    # We have to use a font that has the BLACK RIGHT-POINTING SMALL TRIANGLE
-    # glyph in it.
-    font "DejaVuSans.ttf"
-
 
 ## Notify screen ###############################################################
 ##

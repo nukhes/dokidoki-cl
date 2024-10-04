@@ -48,5 +48,6 @@ label credits_custom:
     "Matheus M. (Roteiro)"
     "Rafael Tavares (Design de personagem)"
     "Rafael Garcia (Design de personagem e desenho digital)"
+    "OBS: Esse jogo possui múltiplos finais, fique a vontade para testar."
     "Feira de Cursos 2024 - ETEC 2DS"
     return

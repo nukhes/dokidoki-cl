@@ -13,5 +13,12 @@ label indiano_lab:
 
     "Acho que Indiano está me dando atenção... Talvez tenha algo mais aqui."
 
+    s "[player], Boa sorte nessa prova!"
+    show sayori 5d at hf11
+
+    mc "Valeu indiano, fica de boa o pai mata no peito."
+
+    "Espero não reprovar por causa dessa prova..."
+
     call minigame
     call dia_2

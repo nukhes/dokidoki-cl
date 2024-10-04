@@ -22,16 +22,19 @@ label game:
     show monika 1k at f22
     m "Indiano, você e suas piadas. Mas, seria maneiro! Talvez uma reação ácido-base? Gosto de ver as cores mudarem."
 
-    "Indiano e Mikael são tão... Qual delas será que eu deveria me aproximar?"
+    "Indiano e Mikael são tão... Qual deles será que eu deveria me aproximar?"
 
     # Transição para a escola
     scene bg class_day with dissolve
     "*Vocês chegam à escola e se reúnem na sala de aula.*"
     "Mais um dia de aula..."
+    scene black with fade
+    pause 2
     "COM UMA PROVA NA PRIMEIRA AULA!!!"
     "A temida prova de química."
     "Pelo menos antes tem uma atividade prática em dupla, isso pode ser minha chance de..."
     "Esquece... ideia idiota"
+    scene bg class_day with fade
 
     show sayori 1r at f11
     s "[player], quer ser minha dupla na prova?"

@@ -18,6 +18,14 @@ label mikael_lab:
     show monika 1j at f11
 
     "Mikael parece ver as coisas de um jeito mais profundo. Isso é interessante..."
+
+    m 3b "[player], Boa sorte nessa prova!"
+    show monika 5a at hf11
+
+    mc "Valeu mikael, fica de boa o pai mata no peito."
+
+    "Espero não reprovar por causa dessa prova..."
+
     
     call minigame
     call dia_2

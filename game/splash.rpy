@@ -13,7 +13,8 @@ init python:
 
     splash_messages = [
         "Feira de Cursos ETEC 2024.",
-        "Bom Jogo <3"
+        "Bom Jogo <3",
+        "Lembre-se que este jogo possui múltiplos finais, de o seu melhor!"
     ]
 
 
