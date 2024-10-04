@@ -175,46 +175,26 @@ init python:
 
 #This is the beginning of the poem minigame
 label poem(transition=True):
-    stop music fadeout 2.0 #Stop previous music
-
-    #These checks change the game for the glitchy minigame in Act3
-    if persistent.playthrough == 3:
-        scene bg notebook-glitch #Act 3
-    else:
-        scene bg notebook #Normal
+    stop music fadeout 2.0
+    scene bg notebook
     show screen quick_menu
-    #Create the character stickers
-    if persistent.playthrough == 3:
-        show m_sticker at sticker_mid #Act 3, Just Monika
-    else:
-        if persistent.playthrough == 0: #Show Sayori in Act 1
-            show s_sticker at sticker_left
-        show n_sticker at sticker_mid
-        if persistent.playthrough == 2 and chapter == 2:
-            show y_sticker_cut at sticker_right
-        else:
-            show y_sticker at sticker_right
-        if persistent.playthrough == 2 and chapter == 2:
-            show m_sticker at sticker_m_glitch
-    if transition:
-        with dissolve_scene_full
-    #Play music
-    if persistent.playthrough == 3:
-        play music ghostmenu #Creepy music
-    else:
-        play music t4 #Play Dreams of Love and Literature
+
+
+    with dissolve_scene_full
+
+    play music t4 
     #Disable un-needed UI things
     $ config.skipping = False
     $ config.allow_skipping = False
     $ allow_skipping = False
     #Display a tutorial tooltip on very first playthrough of minigame
     if persistent.playthrough == 0 and chapter == 0:
-        call screen dialog("It's time to write a poem!\n\nPick words you think your favorite club member\nwill like. Something good might happen with\nwhoever likes your poem the most!", ok_action=Return())
+        call screen dialog("Boa sorte, procure palavras-chaves que podem alimentar uma conversa com ele", ok_action=Return())
     python:
         poemgame_glitch = False
         played_baa = False
         progress = 1
-        numWords = 20
+        numWords = 14
         sPointTotal = 0
         nPointTotal = 0
         yPointTotal = 0
@@ -226,12 +206,12 @@ label poem(transition=True):
         sayoriPos = renpy.random.randint(-1,1)
         natsukiPos = renpy.random.randint(-1,1)
         yuriPos = renpy.random.randint(-1,1)
-        sayoriOffset = 0
-        natsukiOffset = 0
-        yuriOffset = 0
-        sayoriZoom = 1
-        natsukiZoom = 1
-        yuriZoom = 1
+        sayoriOffset = 999
+        natsukiOffset = 999
+        yuriOffset = 999
+        sayoriZoom = 0
+        natsukiZoom = 0
+        yuriZoom = 0
 
 
 
@@ -270,75 +250,9 @@ label poem(transition=True):
                 ui.close()
 
             t = ui.interact()
-            if not poemgame_glitch:
-                if t.glitch: #Make stuff go wonky if the game glitches
-                    poemgame_glitch = True
-                    renpy.music.play(audio.t4g)
-                    renpy.scene()
-                    renpy.show("white")
-                    renpy.show("y_sticker glitch", at_list=[sticker_glitch])
-                elif persistent.playthrough != 3:
-                    renpy.play(gui.activate_sound)
-                    #Hop the character who liked the word
-                    if persistent.playthrough == 0:
-                        if t.sPoint >= 3:
-                            renpy.show("s_sticker hop")
-                        if t.nPoint >= 3:
-                            renpy.show("n_sticker hop")
-                        if t.yPoint >= 3:
-                            renpy.show("y_sticker hop")
-                    else:
-                        if persistent.playthrough == 2 and chapter == 2 and random.randint(0,10) == 0: renpy.show("m_sticker hop") #1/10 chance for Monika to hop from off screen
-                        elif t.nPoint > t.yPoint: renpy.show("n_sticker hop")
-                        elif persistent.playthrough == 2 and not persistent.seen_sticker and random.randint(0,100) == 0:
-                            renpy.show("y_sticker hopg") #1/100 chance for creepy yuri stick in Act 2
-                            persistent.seen_sticker = True
-                        elif persistent.playthrough == 2 and chapter == 2: renpy.show("y_sticker_cut hop")
-                        else: renpy.show("y_sticker hop")
-            else:
-                r = random.randint(0, 10)
-                if r == 0 and not played_baa: #1/10 chance for weird sound effect
-                    renpy.play("gui/sfx/baa.ogg")
-                    played_baa = True
-                elif r <= 5: renpy.play(gui.activate_sound_glitch)
-            #Add points for the selected word to each girl's total
-            sPointTotal += t.sPoint
-            nPointTotal += t.nPoint
-            yPointTotal += t.yPoint
             progress += 1
             if progress > numWords:
-                break #Break out of the loop once all words are chosen
-
-        #After all words chosen, finish up things
-        if persistent.playthrough == 0:
-            # For chapter 1, add 5 points to whomever we sided with
-            if chapter == 1:
-                exec(ch1_choice[0] + "PointTotal += 5")
-            # Logic for taking point totals and assigning poem appeal, scene order, etc.
-            unsorted_pointlist = {"sayori": sPointTotal, "natsuki": nPointTotal, "yuri": yPointTotal}
-            pointlist = sorted(unsorted_pointlist, key=unsorted_pointlist.get)
-
-            # Set poemwinner to the highest scorer
-            poemwinner[chapter] = pointlist[2]
-        else:
-            if nPointTotal > yPointTotal: poemwinner[chapter] = "natsuki"
-            else: poemwinner[chapter] = "yuri"
-
-        # Add appeal point based on poem winner
-        exec(poemwinner[chapter][0] + "_appeal += 1")
-
-        # Set poemappeal
-        if sPointTotal < POEM_DISLIKE_THRESHOLD: s_poemappeal[chapter] = -1
-        elif sPointTotal > POEM_LIKE_THRESHOLD: s_poemappeal[chapter] = 1
-        if nPointTotal < POEM_DISLIKE_THRESHOLD: n_poemappeal[chapter] = -1
-        elif nPointTotal > POEM_LIKE_THRESHOLD: n_poemappeal[chapter] = 1
-        if yPointTotal < POEM_DISLIKE_THRESHOLD: y_poemappeal[chapter] = -1
-        elif yPointTotal > POEM_LIKE_THRESHOLD: y_poemappeal[chapter] = 1
-
-        # Poem winner always has appeal 1 (loves poem)
-        exec(poemwinner[chapter][0] + "_poemappeal[chapter] = 1")
-
-    #1/6 chance that we'll see creepy Happy Thoughts pic after the game in Act 2
+                break
     if persistent.playthrough == 2 and persistent.seen_eyes == None and renpy.random.randint(0,5) == 0:
         $ seen_eyes_this_chapter = True
         $ quick_menu = False
@@ -445,59 +359,20 @@ image m_sticker:
 
 #The art shown for the sticker when hopping
 image s_sticker hop:
-    "gui/poemgame/s_sticker_2.png"
-    xoffset sayoriOffset xzoom sayoriZoom
-    sticker_hop
-    xoffset 0 xzoom 1
-    "s_sticker"
 
 image n_sticker hop:
-    "gui/poemgame/n_sticker_2.png"
-    xoffset natsukiOffset xzoom natsukiZoom
-    sticker_hop
-    xoffset 0 xzoom 1
-    "n_sticker"
 
 image y_sticker hop:
-    "gui/poemgame/y_sticker_2.png"
-    xoffset yuriOffset xzoom yuriZoom
-    sticker_hop
-    xoffset 0 xzoom 1
-    "y_sticker"
 
 image y_sticker_cut hop:
-    "gui/poemgame/y_sticker_cut_2.png"
-    xoffset yuriOffset xzoom yuriZoom
-    sticker_hop
-    xoffset 0 xzoom 1
-    "y_sticker_cut"
 
 #Creepy hopping pic for yuri
 image y_sticker hopg:
-    "gui/poemgame/y_sticker_2g.png"
-    xoffset yuriOffset xzoom yuriZoom
-    sticker_hop
-    xoffset 0 xzoom 1
-    "y_sticker"
 
 image m_sticker hop:
-    "gui/poemgame/m_sticker_2.png"
-    xoffset monikaOffset xzoom monikaZoom
-    sticker_hop
-    xoffset 0 xzoom 1
-    "m_sticker"
 
 #Glitchy sticker for yuri
 image y_sticker glitch:
-    "gui/poemgame/y_sticker_1_broken.png"
-    xoffset yuriOffset xzoom yuriZoom zoom 3.0
-    block:
-        function randomPauseYuri
-        parallel:
-            sticker_move_n
-        parallel:
-            function randomMoveYuri
-        repeat
 
 #These transforms determine the placement of the stickers
 transform sticker_left:

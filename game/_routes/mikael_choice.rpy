@@ -16,8 +16,7 @@ label mikael_choice:
     
     "Estou começando a ficar com vergonha..."
     "A presença de Mikael é imponente, porém muito boa."
-
-    show monika 4b
-    m "'Winston amou julia '"
+    "Começo a mergulhar na leitura procurando palavras-chave para puxar assunto..."
+    call poem
 
     call encontro_mikael

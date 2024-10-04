@@ -1,5 +1,6 @@
 label encontro_mikael:
     scene black with fade
+    "Após a leitura e conversa vocês decidem dar uma volta..."
     "Vocês estão caminhando ao parque para tomar um pouco de ar fresco."
 
     scene bg residential_day with dissolve
@@ -63,5 +64,10 @@ label encontro_mikael:
     "Você puxa-o para um beijo"
     "As emoções se intensificam e a química entre vocês só aumenta..."
     "O que o futuro lhes guarda?"
+    mc "Mikael, eu te amo, quero mais de você..."
+    m "[player]..."
+    m "E-eu te amo, acho díficil colocar em palavras o que estou sentindo..."
+    pause 3
+    "Vocês continuam juntos, a química está no ar!"
 
     call endgame
