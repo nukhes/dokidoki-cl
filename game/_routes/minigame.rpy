@@ -1,7 +1,7 @@
 label minigame:
     scene bg class_day with dissolve
     play music t7
-    $ renpy.call_screen("dialog", "[Prova de Química, sua pontuação aqui poderá determinar o rumo do enredo, boa sorte :)]", ok_action=return()) 
+    $ renpy.call_screen("dialog", "[Prova de Química, sua pontuação aqui poderá determinar o rumo do enredo, boa sorte :)]", ok_action=pass) 
 
     "Devo ler e responder as questões da melhor forma possível..."
     "Isso aqui vai afetar diretamente minha relação com... Esquece, vou parar de pensar bobagem."

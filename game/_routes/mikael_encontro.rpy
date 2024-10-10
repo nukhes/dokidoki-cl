@@ -1,5 +1,6 @@
 label encontro_mikael:
-    $ renpy.call_screen("dialog", "Dia 3", ok_action=return()) 
+    "Dia 03"
+    pause 2.0
     play music t2
     scene black with fade
     "Após a leitura e conversa vocês decidem dar uma volta no dia seguinte, você a princípio fica ansiono mas consegue se acalmar..."

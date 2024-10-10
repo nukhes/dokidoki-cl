@@ -1,6 +1,7 @@
 label game:
     play music t2
-    $ renpy.call_screen("dialog", "Dia 1", ok_action=return()) 
+    "Dia 01"
+    pause 2.0
     scene bg residential_day with fade
 
     "É um dia calmo como qualquer outro no qual eu estou indo para a escola. Bem, seria se não fossem meus dois amigos que vêm todos os dias comigo. Espero que seja um dia divertido como todos os outros."
@@ -58,7 +59,8 @@ label game:
 
 # Dia 2 - Segunda Escolha
 label dia_2:
-    $ renpy.call_screen("dialog", "Dia 2", ok_action=return()) 
+    "Dia 02"
+    pause 2.0
     scene bg residential_day with fade
     "A cara, ontem foi divertido demais, queria mais momentos assim!"
 
