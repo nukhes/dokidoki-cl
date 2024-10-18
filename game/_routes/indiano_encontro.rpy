@@ -1,5 +1,5 @@
 label encontro_indiano:
-    "Dia 3"
+    "Dia 03"
     pause 2.0
     play music t2
     scene black with fade

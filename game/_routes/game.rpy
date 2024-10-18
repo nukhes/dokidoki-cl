@@ -1,6 +1,6 @@
 label game:
     play music t2
-    "Dia 1"
+    "Dia 01"
     pause 2.0
     scene bg residential_day with fade
 
@@ -59,7 +59,7 @@ label game:
 
 # Dia 2 - Segunda Escolha
 label dia_2:
-    "Dia 1"
+    "Dia 02"
     pause 2.0
     scene bg residential_day with fade
     "A cara, ontem foi divertido demais, queria mais momentos assim!"
