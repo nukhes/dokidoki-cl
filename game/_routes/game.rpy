@@ -59,6 +59,7 @@ label game:
 
 # Dia 2 - Segunda Escolha
 label dia_2:
+    play music t2
     "Dia 02"
     pause 2.0
     scene bg residential_day with fade
