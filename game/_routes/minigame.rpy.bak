@@ -129,5 +129,5 @@ label minigame:
 
 
     if score < 3:
-        call badendgame from _call_badendgame
+        call badendgame
     return

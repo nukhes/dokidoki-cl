@@ -50,11 +50,11 @@ label game:
     menu:
         "Escolher Indiano":
             $ chosen = "s"
-            call indiano_lab from _call_indiano_lab
+            call indiano_lab
 
         "Escolher Mikael":
             $ chosen = "m"
-            call mikael_lab from _call_mikael_lab
+            call mikael_lab
 
 
 # Dia 2 - Segunda Escolha
@@ -91,14 +91,14 @@ label dia_2:
     menu:
         "Escolher Mikael":
             if chosen != "m":
-                call marquinhosbadendgame_indiano from _call_marquinhosbadendgame_indiano
+                call marquinhosbadendgame_indiano
             else:
-                call mikael_choice from _call_mikael_choice
+                call mikael_choice
 
         "Escolher Indiano":
             if chosen != "s":
-                call marquinhosbadendgame_mikael from _call_marquinhosbadendgame_mikael
+                call marquinhosbadendgame_mikael
             else:
-                call indiano_choice from _call_indiano_choice
+                call indiano_choice
 
 # A Partir daqui a histório termina em alguns dos encontros

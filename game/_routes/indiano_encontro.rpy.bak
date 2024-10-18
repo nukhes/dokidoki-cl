@@ -62,4 +62,4 @@ label encontro_indiano:
     
     "Vocês continuam juntos, a química está no ar!"
 
-    call endgame from _call_endgame_1
+    call endgame

@@ -17,6 +17,6 @@ label mikael_choice:
     "Estou começando a ficar com vergonha..."
     "A presença de Mikael é imponente, porém muito boa."
     "Começo a mergulhar na leitura procurando palavras-chave para puxar assunto..."
-    call poem from _call_poem_1
+    call poem
 
-    call encontro_mikael from _call_encontro_mikael
+    call encontro_mikael

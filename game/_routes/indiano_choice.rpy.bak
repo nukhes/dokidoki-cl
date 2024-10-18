@@ -24,6 +24,6 @@ label indiano_choice:
     "Estou começando a ficar com vergonha..."
     "A presença de Indiano é doce."
     "Começo a mergulhar na leitura procurando palavras-chave para puxar assunto..."
-    call poem from _call_poem
+    call poem
 
-    call encontro_indiano from _call_encontro_indiano
+    call encontro_indiano

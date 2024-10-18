@@ -20,7 +20,7 @@ label start:
     $ allow_skipping = True
     $ config.allow_skipping = True
 
-    call game
+    call game from _call_game
 
     # if persistent.example_seen:
     #     call tutorial_selection
@@ -37,7 +37,7 @@ label endgame(pause_length=4.0):
     with dissolve_scene_full
     pause pause_length
 
-    call credits_custom
+    call credits_custom from _call_credits_custom_3
 
     $ quick_menu = True
     $ renpy.full_restart()

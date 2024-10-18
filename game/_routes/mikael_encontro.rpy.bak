@@ -73,4 +73,4 @@ label encontro_mikael:
     pause 3
     "Vocês continuam juntos, a química está no ar!"
 
-    call endgame from _call_endgame
+    call endgame

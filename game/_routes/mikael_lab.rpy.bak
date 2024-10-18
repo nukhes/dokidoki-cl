@@ -29,5 +29,5 @@ label mikael_lab:
     "A minha suposta confiança caiu por terra."
     "Bem, vamos nessa"
     
-    call minigame from _call_minigame_1
-    call dia_2 from _call_dia_2_1
+    call minigame
+    call dia_2
