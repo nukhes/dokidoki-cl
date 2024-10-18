@@ -12,6 +12,7 @@ init python:
     splash_message_default = "Este é um mod de Doki Doki Literature Club, sem filiação com a equipe do Team Salvato. Feira de Cursos ETEC 2024."
 
     splash_messages = [
+        "RELEASE 0.2 BETA - Esta é uma versão de desenvolvimento, que ainda não contém as artes finais, serão usados placeholders no momento"
         "Feira de Cursos ETEC 2024.",
         "Bom Jogo <3",
         "Lembre-se que este jogo possui múltiplos finais, de o seu melhor!"
@@ -46,7 +47,7 @@ image menu_fade:
 image menu_art_s:
     subpixel True
     "gui/menu_art_s.png"
-    xcenter 510
+    xcenter 610
     ycenter 500
     zoom 0.9
     menu_art_move(0.68, 510, 0.68)
@@ -148,7 +149,7 @@ image warning:
     0.5
 
 image tos = "bg/warning.png"
-image tos2 = "bg/warning2.png"
+image tos2 = "bg/warning.png"
 
 
 init python:

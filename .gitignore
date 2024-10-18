@@ -6,3 +6,4 @@ errors.txt
 *.txt
 game/cache/bytecode.rpyb
 log.txt
+/game/images/.bak
