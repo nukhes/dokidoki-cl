@@ -1,4 +1,5 @@
 label game:
+    call marquinhosbadendgame_mikael from _call_marquinhosbadendgame_indiano
     play music t2
     "Dia 01"
     pause 2.0
