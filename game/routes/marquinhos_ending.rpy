@@ -15,7 +15,7 @@ label marquinhosbadendgame_indiano(pause_length=4.0):
     show end
     with dissolve_scene_full
     pause pause_length
-    call credits_custom
+    call mikael_choice from _call_mikael_choice
     $ quick_menu = True
     $ renpy.full_restart()
 
@@ -36,6 +36,6 @@ label marquinhosbadendgame_mikael(pause_length=4.0):
     show end
     with dissolve_scene_full
     pause pause_length
-    call credits_custom
+    call credits_custom from _call_credits_custom_2
     $ quick_menu = True
     $ renpy.full_restart()

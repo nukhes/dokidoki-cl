@@ -1,5 +1,8 @@
 label mikael_choice:
     scene bg club_day with fade
+    pause 2.0
+    "..."
+    play music t6
     show monika 5b at hf11
     m "Que bom que você escolheu passar mais tempo comigo!"
     show monika 1b at hf11

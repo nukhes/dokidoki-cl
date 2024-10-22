@@ -63,8 +63,8 @@ image menu_art_m:
     subpixel True
     "gui/menu_art_m.png"
     xcenter 1000
-    ycenter 640
-    zoom 1.8
+    ycenter 540
+    zoom 0
     menu_art_move(1.00, 1000, 1.00)
 
 image menu_nav:

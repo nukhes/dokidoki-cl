@@ -1,5 +1,8 @@
 label indiano_choice:
     scene bg club_day with fade
+    pause 2.0
+    "..."
+    play music t6
     show sayori 4p at hf11
     s "Isso pode dar errado... Mas não se preocupe, eu sei o que estou fazendo."
     show sayori 1k at f11
